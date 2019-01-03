@@ -1,0 +1,8 @@
+#Eclipse specific git ignore
+.project
+.classpath
+.settings/
+
+# Maven
+log/
+target/
