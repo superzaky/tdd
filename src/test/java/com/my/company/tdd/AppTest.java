@@ -1,6 +1,7 @@
 package com.my.company.tdd;
 
 import com.my.company.model.Dollar;
+import com.my.company.model.Franc;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
@@ -34,6 +35,12 @@ public class AppTest extends TestCase {
         Dollar five = new Dollar(5);
         assertEquals(new Dollar(10), five.times(2));
         assertEquals(new Dollar(15), five.times(3));
+    }
+
+    public void testFrancMultiplication() {
+        Franc five= new Franc(5);
+        assertEquals(new Franc(10), five.times(2));
+        assertEquals(new Franc(15), five.times(3));
     }
 
     public void testEquality() {
