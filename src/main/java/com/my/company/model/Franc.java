@@ -1,11 +1,17 @@
 package com.my.company.model;
 
 public class Franc extends Money {
-    public Franc(int amount) {
-        this.amount = amount;
+    private String currency;
+    
+    public Franc(int amount, String currency) {
+        super(amount, currency);
     }
 
+    public String currency() {
+        return currency;
+    }
+    
     public Money times(int multiplier) {
-        return new Franc(amount * multiplier);
+        return Money.franc(amount * multiplier);
     }
 }
