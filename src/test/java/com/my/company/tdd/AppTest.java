@@ -1,5 +1,7 @@
 package com.my.company.tdd;
 
+import com.my.company.model.Bank;
+import com.my.company.model.Expression;
 import com.my.company.model.Money;
 
 import junit.framework.Test;
@@ -45,5 +47,13 @@ public class AppTest extends TestCase {
     public void testCurrency() {
         assertEquals("USD", Money.dollar(1).currency());
         assertEquals("CHF", Money.franc(1).currency());
+    }
+    
+    public void testSimpleAddition() {
+        Money five= Money.dollar(5);
+        Expression sum= five.plus(five);
+        Bank bank= new Bank();
+        Money reduced= bank.reduce(sum, "USD");
+        assertEquals(Money.dollar(10), reduced);
     }
 }
