@@ -1,8 +1,10 @@
-#Eclipse specific git ignore
+# Eclipse specific git ignore
 .project
 .classpath
 .settings/
 bin/
+# PyDev
+.pydevproject
 # Maven
 log/
 target/
