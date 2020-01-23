@@ -8,7 +8,12 @@ class TestCase:
         pass
 
     # the run() method only uses attributes (i.e. self.name) from the superclass, so it probably belongs in the superclass
-    def run(self):
+    def run(self, result):
+        result.testStarted()
         self.setUp()
         # the dynamic invocation of methods is called Pluggable Selector,
         exec("self." + self.name + "()")
+        self.tearDown()
+
+    def tearDown(self):
+        pass
