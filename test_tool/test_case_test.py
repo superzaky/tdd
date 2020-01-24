@@ -1,5 +1,6 @@
 from was_run import WasRun
 from test_case import TestCase
+from test_result import TestResult
 
 class TestCaseTest(TestCase):
 
@@ -8,9 +9,8 @@ class TestCaseTest(TestCase):
 
     def testTemplateMethod(self):
         test= WasRun("testMethod")
-        test.run()
+        test.run(TestResult())
         assert("setUp testMethod tearDown " == test.log)
         print('testTemplateMethod done')
 
-TestCaseTest("testRunning").run()
-TestCaseTest("testSetUp").run()
+TestCaseTest("testTemplateMethod").run(TestResult())
