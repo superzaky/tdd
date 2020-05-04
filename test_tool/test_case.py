@@ -13,8 +13,11 @@ class TestCase:
         result = TestResult()
         result.testStarted()
         self.setUp()
-        # the dynamic invocation of methods is called Pluggable Selector,
-        exec("self." + self.name + "()")
+        try:
+            # the dynamic invocation of methods is called Pluggable Selector,
+            exec("self." + self.name + "()")
+        except:
+            result.testFailed()
         self.tearDown()
         return result
 

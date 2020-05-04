@@ -22,9 +22,17 @@ class TestCaseTest(TestCase):
     def testFailedResult(self):
         test = WasRun("testBrokenMethod")
         result = test.run(TestResult())
-        assert("1 run, 1 failed", result.summary())
+#         assert("1 run, 1 failed", result.summary())
         print('testFailedResult done')
+    
+    def testFailedResultFormatting(self):
+        result = TestResult()
+        result.testStarted()
+        result.testFailed()
+        assert("1 run, 1 failed" == result.summary())
+        print('testFailedResultFormatting done')
 
 TestCaseTest("testTemplateMethod").run(TestResult())
 TestCaseTest("testResult").run(TestResult())
 TestCaseTest("testFailedResult").run(TestResult())
+TestCaseTest("testFailedResultFormatting").run(TestResult())
